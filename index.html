@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de CSS</title>
+ 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline-block;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      background-color: #333;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      padding: 10px 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    main {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px;
+      padding-bottom: 70px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    main section {
+      margin-bottom: 30px; /* Espacio entre secciones */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 5px; /* Bordes redondeados */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+
+
+</head>
+<body>
+
+<header>
+  <h1>Guia de CSS</h1>
+</header>
+
+<nav>
+    <ul>
+      <li><a href="#display">Display</a></li>
+      <li><a href="#position">Position</a></li>
+      <li><a href="#z-index">Z-index</a></li>
+      <li><a href="#overflow">Overflow</a></li>
+      <li class="dropdown">
+        <a href="#float-and-clear">Float and clear</a>
+        <div class="dropdown-content">
+          <a href="#float-and-clear">Float</a>
+          <a href="#float-and-clear">Clear</a>
+          <a href="#float-and-clear">Float examples</a>
+        </div>
+      </li>
+      <li><a href="#display-inline-block">Display: inline-block</a></li>
+      <li class="dropdown">
+        <a href="#others">Others</a>
+        <div class="dropdown-content">
+          <a href="#combinators">Combinators</a>
+          <a href="#pseudo-classes-and-elements">Pseudo-classes</a>
+          <a href="#pseudo-classes-and-elements">Pseudo-elements</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+
+<main>
+    <section id="display">
+        <h2>Display</h2>
+        <p>La propiedad CSS display especifica el tipo de caja de un elemento. Define cómo se debe mostrar un elemento en la página.</p>
+        <p>Para añadir display a un elemento HTML, puedes utilizar el atributo style o definir una regla de estilo en una hoja de estilos CSS.</p>
+        <p>Por ejemplo, para hacer que un elemento sea un bloque, puedes añadir style="display: block;" al elemento HTML o definir en tu hoja de estilos:</p>
+        <pre><code>elemento {
+        display: block;
+      }</code></pre>
+      </section>
+      
+      <section id="position">
+        <h2>Position</h2>
+        <p>La propiedad CSS position especifica el método de posicionamiento de un elemento en la página. Puede tener los siguientes valores:</p>
+        <ul>
+          <li>static: El elemento sigue el flujo normal del documento.</li>
+          <li>relative: El elemento se posiciona con respecto a su posición original.</li>
+          <li>absolute: El elemento se posiciona con respecto al primer ancestro posicionado.</li>
+          <li>fixed: El elemento se posiciona con respecto a la ventana del navegador.</li>
+        </ul>
+        <p>Para añadir position a un elemento HTML, puedes utilizar el atributo style o definir una regla de estilo en una hoja de estilos CSS.</p>
+      </section>
+      
+      <section id="z-index">
+        <h2>Z-index</h2>
+        <p>La propiedad CSS z-index especifica el orden de apilamiento de un elemento en relación con otros elementos en la página. Cuanto mayor sea el valor de z-index, más arriba estará el elemento en la pila de capas.</p>
+        <p>Para añadir z-index a un elemento HTML, puedes utilizar el atributo style o definir una regla de estilo en una hoja de estilos CSS.</p>
+      </section>
+      
+      <section id="overflow">
+        <h2>Overflow</h2>
+        <p>La propiedad CSS overflow especifica qué hacer si el contenido de un elemento es demasiado grande para caber en su contenedor.</p>
+        <p>Los valores comunes para overflow son:</p>
+        <ul>
+          <li>visible: El contenido sobresale del contenedor.</li>
+          <li>hidden: El contenido que no cabe se oculta.</li>
+          <li>scroll: Se agrega una barra de desplazamiento para permitir desplazarse al contenido.</li>
+          <li>auto: Se agrega una barra de desplazamiento solo si es necesario.</li>
+        </ul>
+        <p>Para añadir overflow a un elemento HTML, puedes utilizar el atributo style o definir una regla de estilo en una hoja de estilos CSS.</p>
+      </section>
+      
+      <section id="float-and-clear">
+        <h2>Float and Clear</h2>
+        <p>El uso de `float` en CSS es una técnica que se utiliza para posicionar elementos a la izquierda o a la derecha dentro de su contenedor. Es comúnmente utilizado para crear diseños de varias columnas o para colocar imágenes junto al texto.</p>
+         <h3>Float:</h3>
+         <p>La propiedad `float` se utiliza para cambiar el flujo normal de los elementos en una página web. Cuando aplicas `float` a un elemento, este se desplaza hacia la izquierda o hacia la derecha dentro de su contenedor, y los demás elementos del documento se reorganizan alrededor de él.</p>
+         <h3>Clear:</h3>
+  <p>La propiedad `clear` se utiliza para indicar que un elemento no debe colocarse junto a los elementos flotantes. Esto se usa comúnmente para evitar que un elemento se desplace junto a los elementos flotantes en un diseño.</p>
+  <h3>Ejemplo:</h3>
+  <p>Supongamos que tienes dos elementos `div` que deseas colocar uno al lado del otro. Puedes usar `float` para lograrlo. También puedes usar `clear` para asegurarte de que ningún elemento posterior se desplace junto a los elementos flotantes.</p>
+  <pre>
+    <code>
+      &lt;div class="izquierda"&gt;Contenido Izquierdo&lt;/div&gt;
+      &lt;div class="derecha"&gt;Contenido Derecho&lt;/div&gt;
+      &lt;div class="clearfix"&gt;&lt;/div&gt;
+    </code>
+  </pre>
+
+  <p>En este ejemplo, los elementos con las clases `.izquierda` y `.derecha` se colocarán uno al lado del otro dentro de su contenedor. El `div` con la clase `.clearfix` se coloca después de los elementos flotantes y asegura que ningún elemento posterior se desplace junto a ellos.</p>
+      </section>
+
+      <section id="display-inline-block">
+        <h2>Display: inline-block</h2>
+        <p>La propiedad CSS display: inline-block permite que un elemento sea mostrado como un bloque pero que se comporte como un elemento en línea. Esto significa que el elemento ocupa solo el espacio necesario en la línea y permite establecer ancho y alto.</p>
+        <p>Para añadir display: inline-block a un elemento HTML, puedes utilizar el atributo style o definir una regla de estilo en una hoja de estilos CSS.</p>
+        <p>Por ejemplo, para hacer que un elemento sea mostrado como inline-block, puedes añadir style="display: inline-block;" al elemento HTML o definir en tu hoja de estilos:</p>
+        <pre><code>elemento {
+        display: inline-block;
+      }</code></pre>
+      </section>
+      
+      <section id="others">
+        <h2>Otros</h2>
+        <section id="combinators">
+          <h3>Combinators</h3>
+          <p>Los combinators son selectores en CSS que nos permiten seleccionar elementos basándonos en su relación con otros elementos. Los combinators más comunes son los siguientes:</p>
+          <ul>
+            <li>Selector de descendencia (espacio): Selecciona un elemento que es un descendiente de otro elemento.</li>
+            <li>Selector de hijo directo (>): Selecciona un elemento que es un hijo directo de otro elemento.</li>
+            <li>Selector de adyacente (o hermano siguiente) (+): Selecciona un elemento que es el siguiente hermano de otro elemento.</li>
+            <li>Selector de hermano general (~): Selecciona todos los elementos hermanos de otro elemento.</li>
+          </ul>
+        </section>
+        <section id="pseudo-classes-and-elements">
+          <h3>Pseudo-classes y Pseudo-elements</h3>
+          <p>Las pseudo-clases y pseudo-elementos son selectores en CSS que nos permiten aplicar estilos a elementos basándonos en su estado o posición en relación con el árbol de documentos.</p>
+          <p>Las pseudo-clases se utilizan para seleccionar elementos en un estado específico, como :hover para aplicar estilos cuando el mouse está encima del elemento.</p>
+          <p>Los pseudo-elementos se utilizan para aplicar estilos a partes específicas de un elemento, como ::before para añadir contenido antes del contenido del elemento.</p>
+          <p>Por ejemplo, para aplicar estilos a un enlace cuando el mouse está encima, puedes usar:</p>
+          <pre><code>a:hover {
+        color: red;
+      }</code></pre>
+          <p>Y para añadir un pseudo-elemento antes del contenido de un elemento, puedes usar:</p>
+          <pre><code>elemento::before {
+        content: "►";
+      }</code></pre>
+        </section>
+      </section>
+      
+      
+</main>
+
+<footer>
+    <p>&copy; 2024 Guia de CSS</p>
+  </footer>
+
+</body>
+</html>
